@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class Vowels_in_begining {
+
+	public static void main(String[] args) {
+		System.out.println("Enter any string");
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		String str5 = str;
+		str = str.toLowerCase();
+		String str1 = "";
+		String str2 = "";
+		int[] Count = new int[26];
+		for(int i = 0 ; i < str.length(); i++) {
+			char ch = str.charAt(i);
+			if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+			     Count[ch -'a']++;
+			}
+			else {
+				str2 = str2+ch;
+			}
+		}
+		for(int i = 0 ; i < Count.length ; i++) {
+			
+			int m = Count[i];
+			while(m > 0) {
+				str1 = str1 + (char)(i+'a');
+				m--;
+			}  
+		}
+		String str3 = str1+str2;
+		char[] arr = str3.toCharArray();
+		for(int i = 0 ; i < str5.length(); i++) {
+			char ch = str5.charAt(i);
+			if(ch >= 'A' && ch <= 'Z') {
+				int n = ch+32;
+				ch = (char)n;
+				for(int j = 0 ; j < arr.length ; j++) {
+					if(ch == arr[j]) {
+						int m = arr[j]-32;
+						arr[j] = (char)m;
+						break;
+					}
+				}
+			}
+		}
+		for(char ch : arr) {
+			System.out.print(ch);
+		}
+	}
+
+}
