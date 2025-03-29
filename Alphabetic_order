@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Alphabetic_order {
+
+	public static void main(String[] args) {
+		System.out.println("Enter the string");
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
+		String str2 = str;
+		str = str.toLowerCase();
+		int[] count = new int[26];
+		String str1 = "";
+		for(int i = 0 ; i < str.length(); i++) {
+			char ch = str.charAt(i);
+			count[ch-'a']++;
+		}
+		for(int i = 0 ; i < count.length ; i++) {
+			int m = count[i];
+			while(m > 0) {
+				str1 = str1 + (char)(i+'a');
+				m--;
+			}
+			
+		}
+		char[] arr = str1.toCharArray();
+		for(int i = 0 ; i < str2.length(); i++) {
+			char ch = str2.charAt(i);
+			if(ch >= 'A' && ch <= 'Z') {
+				int n = ch+32;
+				ch = (char)n;
+				for(int j = 0 ; j < arr.length ; j++) {
+					if(ch == arr[j]) {
+						int m = arr[j]-32;
+						arr[j] = (char)m;
+						break;
+					}
+				}
+			}
+		}
+		for(char ch : arr) {
+			System.out.print(ch);
+		}
+		
+		
+
+	}
+
+}
