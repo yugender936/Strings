@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Longest_subsequence {
+
+	public static void main(String[] args) {
+		System.out.println("Enter any string");
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		str = str.toLowerCase();
+		String str1 = "";
+		int maxDiff = 0;
+		int sp = -1;
+		int ep = -1;
+		for(int i = 0 ; i < str.length()-1; i++) {
+			int j = i;
+			while(j < str.length()-1 && (str.charAt(j)+1 == str.charAt(j+1))) {
+				j++;
+			}
+			int diff = j-i;
+			if(diff > maxDiff) {
+				maxDiff = diff;
+				sp = i;
+				ep = j;
+			}
+		}
+		if(sp > -1 && ep > -1) {
+		for(int i = sp; i <= ep ; i++)
+		   str1 = str1 + str.charAt(i);
+		}
+		System.out.println(str1);
+		
+
+	}
+
+}
