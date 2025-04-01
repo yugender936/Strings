@@ -1,0 +1,24 @@
+class Solution {
+    // Function to locate the occurrence of the string x in the string s.
+    int firstOccurence(String txt, String pat) {
+        // Your code here
+        int index = -1;
+        for(int i = 0; i < txt.length() ; i++){
+            String str = "";
+            if(pat.charAt(0) == txt.charAt(i)){
+                int k = i;
+                int j = 0;
+                while(j < pat.length()){
+                    str = str + txt.charAt(k);
+                    k++;
+                    j++;
+                }
+                if(str.equals(pat)){
+                    index = i;
+                    break;
+                }
+            }
+        }
+        return index;
+    }
+}
