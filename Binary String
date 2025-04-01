@@ -1,0 +1,14 @@
+class Solution {
+    boolean isBinary(String s) {
+        // Your code here
+        boolean isBinary = false;
+        int i = 0;
+        while(i < s.length() && (s.charAt(i) == '0' || s.charAt(i) == '1')){
+            i++;
+        }
+        if(i > s.length()-1){
+            isBinary = true;
+        }
+        return isBinary;
+    }
+}
