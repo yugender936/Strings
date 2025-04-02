@@ -1,0 +1,42 @@
+class Solution
+{
+    //Function to remove common characters and concatenate two strings.
+    public static String concatenatedString(String s1,String s2)
+    {
+        // Your code here
+        String str = "";
+        String str1 = "";
+        for(int i = 0 ; i < s1.length() || i < s2.length() ; i++){
+            
+            if(i < s1.length()){
+                boolean repeated = false;
+                for(int j = 0 ; j < s2.length() ; j++){
+                    if(s1.charAt(i) == s2.charAt(j)){
+                        repeated = true;
+                        break;
+                    }
+                }
+                if(!repeated){
+                    str = str + s1.charAt(i);
+                }
+            }
+            
+            if(i < s2.length()){
+                boolean repeated = false;
+                for(int j = 0 ; j < s1.length() ; j++){
+                    if(s2.charAt(i) == s1.charAt(j)){
+                        repeated = true;
+                        break;
+                    }
+                }
+                if(!repeated){
+                    str1 = str1 + s2.charAt(i);
+                }
+            }
+        }
+        if(str.length() == 0 && str1.length() == 0){
+            return "-1";
+        }
+        return str+str1;
+    }
+}
