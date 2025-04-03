@@ -1,0 +1,17 @@
+class Sol
+{
+    Boolean check (String s)
+    {
+        // your code here  
+        boolean isSame = false;
+        char ch = s.charAt(0);
+        int i = 0;
+        while(i < s.length() && ch == s.charAt(i)){
+            i++;
+        }
+        if(i == s.length()){
+            isSame = true;
+        }
+        return isSame;
+    }
+}
