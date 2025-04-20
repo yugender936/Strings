@@ -1,0 +1,22 @@
+class Sol
+{
+    int isPossible (String S)
+    {
+        // your code hereint
+        int n = S.length();
+        
+        int[] freq = new int[26];
+        
+        for(char ch : S.toCharArray()){
+            freq[ch-'a']++;
+        }
+        
+        int oddcount = 0;
+        for(int count : freq){
+           if(count % 2 != 0){
+               oddcount++;
+           }
+        }
+        return (oddcount <= 1) ? 1 : 0;
+    }
+}
